@@ -6,32 +6,33 @@
         xmlns:local="clr-namespace:Bolt"
         mc:Ignorable="d"
         Title="Bolt" Height="347" Width="578" ResizeMode="NoResize" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}">
-    <Grid Margin="0,0,10,-143">
-        <Label Content="Bolt autoclicker" HorizontalAlignment="Left" VerticalAlignment="Top" Height="58" Width="236" FontSize="30" FontWeight="Bold" FontStyle="Italic" Margin="50,0,0,0"/>
-        <Rectangle HorizontalAlignment="Left" Height="64" Margin="20,127,0,0" VerticalAlignment="Top" Width="175" Fill="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
-        <Label Content="Click Mode" HorizontalAlignment="Left" Margin="20,102,0,0" VerticalAlignment="Top" Width="88"/>
-        <Rectangle HorizontalAlignment="Left" Height="64" Margin="200,128,0,0" VerticalAlignment="Top" Width="174" Fill="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
-        <Label Content="Mouse Button" HorizontalAlignment="Left" Margin="199,102,0,0" VerticalAlignment="Top" Width="88"/>
-        <TextBox x:Name="tbIntervalMilli" AcceptsReturn="False" PreviewTextInput="TextBox_PreviewTextInput" HorizontalAlignment="Left" Margin="168,263,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="116" Height="32" FontSize="20"/>
-        <Label Content="Clicking Interval" HorizontalAlignment="Left" Margin="97,210,0,0" VerticalAlignment="Top" Width="139" FontSize="16" FontWeight="Bold"/>
-        <TextBox x:Name="tbIntervalSec" AcceptsReturn="False" PreviewTextInput="TextBox_PreviewTextInput" HorizontalAlignment="Left" Margin="47,263,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="116" Height="32" FontSize="20" ClipToBounds="True" VerticalScrollBarVisibility="Disabled" UseLayoutRounding="False"/>
-        <Label Content="Seconds" HorizontalAlignment="Left" Margin="47,237,0,0" VerticalAlignment="Top" Width="116"/>
-        <Label Content="Milliseconds" HorizontalAlignment="Left" Margin="168,237,0,0" VerticalAlignment="Top" Width="116"/>
-        <Rectangle HorizontalAlignment="Left" Height="64" Margin="379,128,0,0" VerticalAlignment="Top" Width="175" Fill="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
-        <Label Content="Repeat Mode" HorizontalAlignment="Left" Margin="379,102,0,0" VerticalAlignment="Top" Width="88"/>
-        <Label Content="Options;" HorizontalAlignment="Center" Margin="0,55,0,0" VerticalAlignment="Top" Width="105" FontSize="24" FontWeight="Bold" Height="42"/>
-        <TextBox x:Name="tbRepeatCount" AcceptsReturn="False" PreviewTextInput="TextBox_PreviewTextInput" HorizontalAlignment="Left" Margin="498,152,0,0" TextWrapping="Wrap" Text="5" VerticalAlignment="Top" Width="49" Height="14" FontSize="10"/>
-        <Label Content="Repeat amount" HorizontalAlignment="Left" Margin="487,131,0,0" VerticalAlignment="Top" Width="71" Height="21" FontSize="9"/>
-        <Button Content="Start Clicking" HorizontalAlignment="Left" Margin="308,221,0,0" VerticalAlignment="Top" Height="42" Width="116" Background="#FFF3F3F3" Click="ButtonStart" FontSize="16" FontWeight="Bold" IsDefault="True"/>
-        <Button Content="Stop Clicking" HorizontalAlignment="Left" Margin="429,221,0,0" VerticalAlignment="Top" Height="42" Width="116" Background="#FFF3F3F3" Click="ButtonStop" FontSize="16" FontWeight="Bold" IsEnabled="False"/>
-        <RadioButton x:Name="mpr" Content="Mouse Press + Release" HorizontalAlignment="Left" Margin="32,134,0,0" VerticalAlignment="Top" GroupName="ClickMode" IsChecked="True"/>
-        <RadioButton x:Name="mpo" Content="Mouse Press only" HorizontalAlignment="Left" Margin="32,151,0,0" VerticalAlignment="Top" GroupName="ClickMode"/>
-        <RadioButton x:Name="mro" Content="Mouse Release only" HorizontalAlignment="Left" Margin="32,166,0,0" VerticalAlignment="Top" GroupName="ClickMode"/>
-        <RadioButton x:Name="ml" Content="Left Mouse" HorizontalAlignment="Left" Margin="208,134,0,0" VerticalAlignment="Top" GroupName="Mouse Button" IsChecked="True"/>
-        <RadioButton x:Name="mr" Content="Right Mouse" HorizontalAlignment="Left" Margin="208,151,0,0" VerticalAlignment="Top" GroupName="Mouse Button"/>
-        <RadioButton x:Name="mm" Content="Middle Mouse" HorizontalAlignment="Left" Margin="208,166,0,0" VerticalAlignment="Top" GroupName="Mouse Button"/>
-        <RadioButton x:Name="set" Content="Repeat X amount" HorizontalAlignment="Left" Margin="392,166,0,0" VerticalAlignment="Top" GroupName="Repeat Mode"/>
-        <RadioButton x:Name="inf" Content="Until stopped" HorizontalAlignment="Left" Margin="392,151,0,0" VerticalAlignment="Top" IsChecked="True"/>
-    </Grid>
+	<Grid Margin="0,0,10,-6">
+		<Label Content="Bolt autoclicker" HorizontalAlignment="Left" VerticalAlignment="Top" Height="58" Width="236" FontSize="30" FontWeight="Bold" FontStyle="Italic" Margin="50,0,0,0"/>
+		<Rectangle HorizontalAlignment="Left" Height="64" Margin="20,127,0,0" VerticalAlignment="Top" Width="175" Fill="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+		<Label Content="Click Mode" HorizontalAlignment="Left" Margin="20,102,0,0" VerticalAlignment="Top" Width="88"/>
+		<Rectangle HorizontalAlignment="Left" Height="64" Margin="200,128,0,0" VerticalAlignment="Top" Width="174" Fill="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+		<Label Content="Mouse Button" HorizontalAlignment="Left" Margin="199,102,0,0" VerticalAlignment="Top" Width="88"/>
+		<TextBox x:Name="tbIntervalMilli" AcceptsReturn="False" PreviewTextInput="TextBox_PreviewTextInput" HorizontalAlignment="Left" Margin="168,263,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="116" Height="32" FontSize="20"/>
+		<Label Content="Clicking Interval" HorizontalAlignment="Left" Margin="97,210,0,0" VerticalAlignment="Top" Width="139" FontSize="16" FontWeight="Bold"/>
+		<TextBox x:Name="tbIntervalSec" AcceptsReturn="False" PreviewTextInput="TextBox_PreviewTextInput" HorizontalAlignment="Left" Margin="47,263,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="116" Height="32" FontSize="20" ClipToBounds="True" VerticalScrollBarVisibility="Disabled" UseLayoutRounding="False"/>
+		<Label Content="Seconds" HorizontalAlignment="Left" Margin="47,237,0,0" VerticalAlignment="Top" Width="116"/>
+		<Label Content="Milliseconds" HorizontalAlignment="Left" Margin="168,237,0,0" VerticalAlignment="Top" Width="116"/>
+		<Rectangle HorizontalAlignment="Left" Height="64" Margin="379,128,0,0" VerticalAlignment="Top" Width="175" Fill="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+		<Label Content="Repeat Mode" HorizontalAlignment="Left" Margin="379,102,0,0" VerticalAlignment="Top" Width="88"/>
+		<Label Content="Options;" HorizontalAlignment="Center" Margin="0,55,0,0" VerticalAlignment="Top" Width="105" FontSize="24" FontWeight="Bold" Height="42"/>
+		<TextBox x:Name="tbRepeatCount" AcceptsReturn="False" PreviewTextInput="TextBox_PreviewTextInput" HorizontalAlignment="Left" Margin="466,133,0,0" TextWrapping="Wrap" Text="5" VerticalAlignment="Top" Width="50" Height="14" FontSize="10"/>
+		<Label Content="Repeat amount:" HorizontalAlignment="Left" Margin="392,128,0,0" VerticalAlignment="Top" Width="71" Height="21" FontSize="9"/>
+		<Button x:Name="tbStartAC" Content="Start Clicking" HorizontalAlignment="Left" Margin="308,221,0,0" VerticalAlignment="Top" Height="42" Width="116" Background="#FFF3F3F3" Click="ButtonStart" FontSize="16" FontWeight="Bold" IsDefault="True"/>
+		<Button x:Name="tbStopAC" Content="Stop Clicking" HorizontalAlignment="Left" Margin="429,221,0,0" VerticalAlignment="Top" Height="42" Width="116" Background="#FFF3F3F3" Click="ButtonStop" FontSize="16" FontWeight="Bold" IsEnabled="False"/>
+		<RadioButton x:Name="mpr" Content="Mouse Press + Release" HorizontalAlignment="Left" Margin="32,134,0,0" VerticalAlignment="Top" GroupName="ClickMode" IsChecked="True"/>
+		<RadioButton x:Name="mpo" Content="Mouse Press only" HorizontalAlignment="Left" Margin="32,151,0,0" VerticalAlignment="Top" GroupName="ClickMode"/>
+		<RadioButton x:Name="mro" Content="Mouse Release only" HorizontalAlignment="Left" Margin="32,169,0,0" VerticalAlignment="Top" GroupName="ClickMode"/>
+		<RadioButton x:Name="ml" Content="Left Mouse" HorizontalAlignment="Left" Margin="208,134,0,0" VerticalAlignment="Top" GroupName="Mouse Button" IsChecked="True"/>
+		<RadioButton x:Name="mr" Content="Right Mouse" HorizontalAlignment="Left" Margin="208,151,0,0" VerticalAlignment="Top" GroupName="Mouse Button"/>
+		<RadioButton x:Name="mm" Content="Middle Mouse" HorizontalAlignment="Left" Margin="208,169,0,0" VerticalAlignment="Top" GroupName="Mouse Button"/>
+		<RadioButton x:Name="set" Content="Repeat X amount" HorizontalAlignment="Left" Margin="392,169,0,0" VerticalAlignment="Top" GroupName="Repeat Mode"/>
+		<RadioButton x:Name="inf" Content="Until stopped" HorizontalAlignment="Left" Margin="392,151,0,0" VerticalAlignment="Top" IsChecked="True" GroupName="Repeat Mode"/>
+		<RadioButton x:Name="Debug_RB" Content="Debug Enabled" HorizontalAlignment="Left" Margin="445,25,0,0" VerticalAlignment="Top" IsChecked="True" GroupName="Repeat Mode"/>
+	</Grid>
 
 </Window>
