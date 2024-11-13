@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\maxme\\Desktop\\Repos\\Bolt\\Bolt\\Bolt.csproj": {}
+    "C:\\Users\\maxme\\Desktop\\Repos\\Bolt\\Bolt-AC\\Bolt.csproj": {}
   },
   "projects": {
-    "C:\\Users\\maxme\\Desktop\\Repos\\Bolt\\Bolt\\Bolt.csproj": {
+    "C:\\Users\\maxme\\Desktop\\Repos\\Bolt\\Bolt-AC\\Bolt.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maxme\\Desktop\\Repos\\Bolt\\Bolt\\Bolt.csproj",
+        "projectUniqueName": "C:\\Users\\maxme\\Desktop\\Repos\\Bolt\\Bolt-AC\\Bolt.csproj",
         "projectName": "Bolt",
-        "projectPath": "C:\\Users\\maxme\\Desktop\\Repos\\Bolt\\Bolt\\Bolt.csproj",
+        "projectPath": "C:\\Users\\maxme\\Desktop\\Repos\\Bolt\\Bolt-AC\\Bolt.csproj",
         "packagesPath": "C:\\Users\\maxme\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maxme\\Desktop\\Repos\\Bolt\\Bolt\\obj\\",
+        "outputPath": "C:\\Users\\maxme\\Desktop\\Repos\\Bolt\\Bolt-AC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\maxme\\AppData\\Roaming\\NuGet\\NuGet.Config",
