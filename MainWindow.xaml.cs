@@ -38,7 +38,7 @@ namespace Bolt
 
         bool clickerEnabled = false;
 
-        int[] clickSettings = { };
+        int[] clickSettings = {};
 
         public MainWindow()
         {
@@ -76,6 +76,8 @@ namespace Bolt
             clickSettings = GetChosenOptions();
             clickerEnabled = true;
             ChangeButtonStates(clickerEnabled);
+            if (DebugCB.IsChecked == true) { ShowDebugInfo(); }
+            Thread.Sleep(200);
             RunClicker();
             //TODO: maek fnuuy autoclickr start
         }
@@ -123,7 +125,7 @@ namespace Bolt
 
             //-- Repeat Amount
             if (options[2] == 2)
-            { options[3] = int.Parse(tbRepeatCount.Text); }
+            { options[3] = 0 + int.Parse(tbRepeatCount.Text); }
             else
             { options[3] = int.MaxValue; }
 
@@ -185,7 +187,7 @@ namespace Bolt
 
         private void ChangeButtonStates(bool isClicking)
         {
-            if (isClicking)
+            if (isClicking == true)
             {
                 tbStartAC.IsEnabled = false;
                 tbStopAC.IsEnabled = true;
@@ -194,6 +196,14 @@ namespace Bolt
             {
                 tbStartAC.IsEnabled = true;
                 tbStopAC.IsEnabled = false;
+            }
+        }
+
+        private void ShowDebugInfo()
+        {
+            for (int i = 0; i < clickSettings.Length; i++)
+            {
+                MessageBox.Show(clickSettings[i].ToString());
             }
         }
     }

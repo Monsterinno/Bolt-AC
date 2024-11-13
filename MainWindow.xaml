@@ -32,7 +32,7 @@
 		<RadioButton x:Name="mm" Content="Middle Mouse" HorizontalAlignment="Left" Margin="208,169,0,0" VerticalAlignment="Top" GroupName="Mouse Button"/>
 		<RadioButton x:Name="set" Content="Repeat X amount" HorizontalAlignment="Left" Margin="392,169,0,0" VerticalAlignment="Top" GroupName="Repeat Mode"/>
 		<RadioButton x:Name="inf" Content="Until stopped" HorizontalAlignment="Left" Margin="392,151,0,0" VerticalAlignment="Top" IsChecked="True" GroupName="Repeat Mode"/>
-		<RadioButton x:Name="Debug_RB" Content="Debug Enabled" HorizontalAlignment="Left" Margin="445,25,0,0" VerticalAlignment="Top" IsChecked="True" GroupName="Repeat Mode"/>
-	</Grid>
+        <CheckBox x:Name="DebugCB" Content="Debug Enabled" HorizontalAlignment="Left" Margin="447,21,0,0" VerticalAlignment="Top"/>
+    </Grid>
 
 </Window>
