@@ -9,6 +9,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Threading;
 using System.Runtime.InteropServices;
 
 
@@ -36,9 +37,13 @@ namespace Bolt
         uint chosenButton;
         bool pPlusR = false; // Press and Release boolean
 
-        bool clickerEnabled = false;
+        static bool clickerEnabled = false;
 
-        int[] clickSettings = {};
+        static int[] clickSettings = {};
+
+        //-- Thread Creation
+        Thread mainThread = Thread.CurrentThread;
+
 
         public MainWindow()
         {
@@ -53,7 +58,7 @@ namespace Bolt
         }
 
         //-- Runs whenever the button "Start Clicking" is pressed
-        private void RunClicker()
+        public void RunClicker()
         {
             for (int i = 0; i < clickSettings[3]; i++)
             {
@@ -67,6 +72,7 @@ namespace Bolt
                 }
                 Thread.Sleep(clickSettings[4]);
             }
+            MessageBox.Show("Done!");
             clickerEnabled = false;
         }
 
@@ -77,8 +83,8 @@ namespace Bolt
             clickerEnabled = true;
             ChangeButtonStates(clickerEnabled);
             if (DebugCB.IsChecked == true) { ShowDebugInfo(); }
-            Thread.Sleep(200);
-            RunClicker();
+            Thread clickerSim = new Thread(RunClicker);
+            clickerSim.Start();
             //TODO: maek fnuuy autoclickr start
         }
 
