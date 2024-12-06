@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bolt")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e632e797a785af7bdf88f84e4d09a8a1502748da")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+85467ece31ab8ffefc6243b8e87636a364354a14")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bolt")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bolt")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
