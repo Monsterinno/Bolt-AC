@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\maxme\\Desktop\\Repos\\Bolt\\Bolt-AC\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0301877C-5975-46B5-8417-2B69C8416ED8}|Bolt.csproj|c:\\users\\maxme\\desktop\\repos\\bolt\\bolt-ac\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{0301877C-5975-46B5-8417-2B69C8416ED8}|Bolt.csproj|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0301877C-5975-46B5-8417-2B69C8416ED8}|Bolt.csproj|c:\\users\\maxme\\desktop\\repos\\bolt\\bolt-ac\\app.manifest||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{0301877C-5975-46B5-8417-2B69C8416ED8}|Bolt.csproj|solutionrelative:app.manifest||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0301877C-5975-46B5-8417-2B69C8416ED8}|Bolt.csproj|c:\\users\\maxme\\desktop\\repos\\bolt\\bolt-ac\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0301877C-5975-46B5-8417-2B69C8416ED8}|Bolt.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -18,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,27 +34,52 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\maxme\\Desktop\\Repos\\Bolt\\Bolt-AC\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\Users\\maxme\\Desktop\\Repos\\Bolt\\Bolt-AC\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-11-29T11:17:30.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "app.manifest",
+              "DocumentMoniker": "C:\\Users\\maxme\\Desktop\\Repos\\Bolt\\Bolt-AC\\app.manifest",
+              "RelativeDocumentMoniker": "app.manifest",
+              "ToolTip": "C:\\Users\\maxme\\Desktop\\Repos\\Bolt\\Bolt-AC\\app.manifest",
+              "RelativeToolTip": "app.manifest",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001203|",
+              "WhenOpened": "2024-11-28T12:12:59.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\maxme\\Desktop\\Repos\\Bolt\\Bolt-AC\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
               "ToolTip": "C:\\Users\\maxme\\Desktop\\Repos\\Bolt\\Bolt-AC\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-13T15:04:57.888Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-13T15:04:57.888Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\maxme\\Desktop\\Repos\\Bolt\\Bolt-AC\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\maxme\\Desktop\\Repos\\Bolt\\Bolt-AC\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAYwGYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAJsAAAAAAAAAAADwv04AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T15:04:55.961Z",
+              "WhenOpened": "2024-11-28T12:35:19.318Z",
               "EditorCaption": ""
             }
           ]

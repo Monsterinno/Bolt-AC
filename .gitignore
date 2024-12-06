@@ -1,3 +1,2 @@
-.vs/*
-.vs/Bolt-AC
-.vs/Bolt-AC/FileContentIndex
+*.vs
+*.bin

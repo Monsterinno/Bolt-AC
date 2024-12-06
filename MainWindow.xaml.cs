@@ -11,6 +11,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Threading;
 using System.Runtime.InteropServices;
+using System.Diagnostics;
 
 
 namespace Bolt
@@ -18,6 +19,11 @@ namespace Bolt
 
     public partial class MainWindow : Window
     {
+        //-- Thread Creation
+        Thread hotkeyThread;
+        Thread clickerSim;
+
+        bool killThreads = false;
 
         //-- Importing Dll
         [DllImport("user32.dll")]
@@ -34,7 +40,8 @@ namespace Bolt
         const uint mDown = 0x0020;
         const uint mUp = 0x0040;
 
-        uint chosenButton;
+        const int hotkey = 0x75;
+
         bool pPlusR = false; // Press and Release boolean
 
         static bool clickerEnabled = false;
@@ -44,13 +51,21 @@ namespace Bolt
         //-- Thread Creation
         Thread mainThread = Thread.CurrentThread;
 
-
         public MainWindow()
         {
             InitializeComponent();
+            clickerSim = new Thread(RunClicker);
+            clickerSim.Name = "clickerSimThread";
+            hotkeyThread = new Thread(CheckHotkeyState);
+            hotkeyThread.Name = "hotkeyThread";
+            hotkeyThread.Start();
+        }
+        private void Window_Exit(object sender, EventArgs e)
+        {
+            killThreads = true;
         }
 
-        //-- This is here entirely so that people cant input letters or special characters as arguements for the click settings
+        //-- This is here entirely so that people cant input letters or special characters as arguements for the click settings bc that would be bad.
         private static readonly Regex _regex = new Regex("^[0-9]+$");
         private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
@@ -62,6 +77,8 @@ namespace Bolt
         {
             for (int i = 0; i < clickSettings[3]; i++)
             {
+                if (killThreads) { break; }
+
                 if (clickerEnabled)
                 {
                     MouseClick();
@@ -72,28 +89,66 @@ namespace Bolt
                 }
                 Thread.Sleep(clickSettings[4]);
             }
-            MessageBox.Show("Done!");
+
+            this.Dispatcher.Invoke(() =>
+            {
+                if (DebugCB.IsChecked == true) { MessageBox.Show("Finished Clicking."); }
+            });
+
             clickerEnabled = false;
         }
+        //-- So the hotkey actually toggles the autoclicker
+        private void CheckHotkeyState()
+        {
+            while (true)
+            {
+                if (killThreads) { break; }
 
+                if (GetAsyncKeyState(hotkey)<0)
+                {
+                    if (clickerEnabled == false)
+                    {
+                        this.Dispatcher.Invoke(() =>
+                        { 
+                            EnableClicker();
+                        });
+                    }else
+                    {
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            DisableClicker();
+                        });  
+                    }
+                    Thread.Sleep(300);
+                }
+
+            }
+        }
         //-- Event function connected to the button "Start Clicking"
         private void ButtonStart(object sender, RoutedEventArgs e)
         {
-            clickSettings = GetChosenOptions();
-            clickerEnabled = true;
-            ChangeButtonStates(clickerEnabled);
-            if (DebugCB.IsChecked == true) { ShowDebugInfo(); }
-            Thread clickerSim = new Thread(RunClicker);
-            clickerSim.Start();
-            //TODO: maek fnuuy autoclickr start
+            EnableClicker();
         }
 
         //-- Event function connected to the button "Stop Clicking"
         private void ButtonStop(object sender, RoutedEventArgs e)
         {
+            DisableClicker();
+        }
+
+        //-- These 2 functions are used for toggling the autoclicker
+        private void EnableClicker()
+        {
+            clickSettings = GetChosenOptions();
+            clickerEnabled = true;
+            ChangeButtonStates(clickerEnabled);
+            if (DebugCB.IsChecked == true) { ShowDebugInfo(); }
+            clickerSim.Start();
+        }
+        private void DisableClicker()
+        {
             clickerEnabled = false;
             ChangeButtonStates(clickerEnabled);
-            //TODO: maek fnuuy autoclickr stop
         }
 
         //-- A function dedicated to putting all the user's input for settings in a single int array
@@ -136,7 +191,27 @@ namespace Bolt
             { options[3] = int.MaxValue; }
 
             //-- Interval
-            options[4] = 0 + int.Parse(tbIntervalMilli.Text) + (int.Parse(tbIntervalSec.Text) * 1000);
+            if (int.TryParse(tbIntervalMilli.Text, out int result) == false)
+            {
+                if (int.TryParse(tbIntervalSec.Text, out result) == false)
+                {
+                    options[4] = 0;
+                }
+                else
+                {
+                    options[4] = 0 + (int.Parse(tbIntervalSec.Text) * 1000);
+                }
+            }
+            else
+            {
+                if (int.TryParse(tbIntervalSec.Text, out result) == false)
+                {
+                    options[4] = 0 + int.Parse(tbIntervalMilli.Text);
+                }else
+                {
+                    options[4] = 0 + int.Parse(tbIntervalMilli.Text) + (int.Parse(tbIntervalSec.Text) * 1000);
+                }
+            }
 
             if (options[4] < 20)
             {
@@ -190,7 +265,7 @@ namespace Bolt
                     break;
             }
         }
-
+        //-- Here so that you cant enable the autoclicker twice in a row.
         private void ChangeButtonStates(bool isClicking)
         {
             if (isClicking == true)
